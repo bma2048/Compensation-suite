@@ -1,0 +1,28 @@
+.wrapper{
+    widows: 300px;
+    max-width: 300px;
+}
+
+.JobType{
+    border-size:2px;
+    border-style:solid;
+    border-color:black;
+
+}
+.Frequency{
+    border-size:2px;
+    border-style:solid;
+    border-color:black;
+}
+
+.Rates{
+    border-size:2px;
+    border-style:solid;
+    border-color:black;
+}
+
+.buttons{
+    border-size:2px;
+    border-style:solid;
+    border-color:black;
+}

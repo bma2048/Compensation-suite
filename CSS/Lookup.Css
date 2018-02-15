@@ -1,0 +1,39 @@
+.Job{
+    min-height:255px;
+    width:275px;
+    border-style:solid;
+    border-color:black;
+    float:left;       
+}
+
+.expro{
+    min-height:70px;
+    width:275px;
+    border-style:solid;
+    border-color:black;
+    float:left;       
+}
+
+.LTS{
+    min-height:70px;
+    width:275px;
+    border-style:solid;
+    border-color:black;
+    float:left;
+}
+
+.STS{
+    min-height:95px;
+    width:275px;
+    border-style:solid;
+    border-color:black;
+    float:left;
+}
+
+.buttons{
+    min-height:50px;
+    width:500px;
+    border-style:solid;
+    border-color:black;
+    float:left;
+}

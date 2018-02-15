@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <link rel="stylesheet" href="PayRate.css">
+ 
+<title>Pay Rate Calculator</title>
+</head>
+<body>
+    <div class = "wrapper">
+         Pay Rate Calculator
+        <div class = "JobType">
+            <form action="">
+                <input type="radio" name="Job Type" value="Regular"> Regular<input type="radio" name="Job Type" value="Short-term Supplemental">Short-term Supplemental<br>
+                <input type="radio" name="Job Type" value="Co-op"> Co-op <input type="radio" name="Job Type" value="Long-term Supplemental">Long-term Supplemental<br>
+            </form>
+        </div>
+        <div class ="Exempt">
+             Exempt?<br>
+            <input type="radio" name="Job Type" value="Yes"> yes<br>
+            <input type="radio" name="Job Type" value="No">no<br>
+        </div>
+        <div class = "Frequency">
+          <p>Amount   Frequency  <button type="button"> Convert</button></p>
+          <input type="text"> <select> <option value = "Hourly">Hourly</option><option value = "Daily">Daily</option><option value = "Weekly">Weekly</option><option value = "Monthly">Monthly</option><option value = "Annual">Annual</option></select>
+        </div> 
+        <div class = "Rates">
+          <p>Hourly Rate    <input type="text" disabled = "disabled" id=HR align="right"> 
+          <p>Daily Rate     <input type="text" disabled = "disabled" id=DR align="right"> </p>
+          <p>Weekly Rate    <input type="text" disabled = "disabled" id=WR align="right"> </p>
+          <p>Monthly Rate   <input type="text" disabled = "disabled" id=MR align="right"> </p>
+          <p>Annual rate    <input type="text" disabled = "disabled" id=AR align="right"> </p>
+        </div>
+        <div class = "buttons">
+                <button type="button"> prorate </button> <button type="button"> Clear</button> <button type="button"> exit</button>
+        </div>
+        
+    </div>
+</body>
+</html>
