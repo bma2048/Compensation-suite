@@ -3,8 +3,8 @@
 <head>
 
     <link rel="stylesheet" href="../CSS/PayRate.css">
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../Javascript/PayRate.js" type="text/javascript"></script>
-    <script src="jquery-3.3.1.min.js"></script>
  
 <title>Pay Rate Calculator</title>
 </head>
@@ -13,18 +13,18 @@
          Pay Rate Calculator
         <div class = "JobType">
             <form action="">
-                <input type="radio" name="Job Type" value="Regular"> Regular<input type="radio" name="Job Type" value="Short-term Supplemental">Short-term Supplemental<br>
-                <input type="radio" name="Job Type" value="Co-op"> Co-op <input type="radio" name="Job Type" value="Long-term Supplemental">Long-term Supplemental<br>
+                <input type="radio" id="regular" name="Job Type" value="Regular"> Regular<input type="radio" name="Job Type" value="Short-term Supplemental">Short-term Supplemental<br>
+                <input type="radio" id="coop" name="Job Type" value="Co-op"> Co-op <input type="radio" name="Job Type" value="Long-term Supplemental">Long-term Supplemental<br>
             </form>
         </div>
         <div class ="Exempt">
              Exempt?<br>
-            <input type="radio" name="Job Type" value="Yes"> yes<br>
-            <input type="radio" name="Job Type" value="No">no<br>
+            <input type="radio" id="exemptYes" name="Job Type" value="Yes"> yes<br>
+            <input type="radio" id="exemptNo" name="Job Type" value="No">no<br>
         </div>
         <div class = "Frequency">
-          <p>Amount   Frequency  <button type="button"> Convert</button></p>
-          <input type="text"> <select> <option value = "Hourly">Hourly</option><option value = "Daily">Daily</option><option value = "Weekly">Weekly</option><option value = "Monthly">Monthly</option><option value = "Annual">Annual</option></select>
+          <p>Amount   Frequency  <button type="button" id="convert"> Convert</button></p>
+          <input type="text" id="amount"> <select> <option value = "Hourly">Hourly</option><option value = "Daily">Daily</option><option value = "Weekly">Weekly</option><option value = "Monthly">Monthly</option><option value = "Annual">Annual</option></select>
         </div> 
         <div class = "Rates">
           <p>Hourly Rate    <input type="text" disabled = "disabled" id=HR align="right"> 
@@ -34,7 +34,7 @@
           <p>Annual rate    <input type="text" disabled = "disabled" id=AR align="right"> </p>
         </div>
         <div class = "buttons">
-                <button type="button"> prorate </button> <button type="button"> Clear</button> <button type="button"> exit</button>
+                <button type="button" id="prorateButton"> prorate </button> <button type="button" id="clearButton"> Clear</button> <button type="button"> exit</button>
         </div>
         
     </div>
