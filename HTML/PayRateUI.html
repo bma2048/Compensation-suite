@@ -19,12 +19,12 @@
         </div>
         <div class ="Exempt">
              Exempt?<br>
-            <input type="radio" id="exemptYes" name="Job Type" value="Yes"> yes<br>
+            <input type="radio" id="exemptYes" name="Job Type" value="Yes" checked> yes<br>
             <input type="radio" id="exemptNo" name="Job Type" value="No">no<br>
         </div>
         <div class = "Frequency">
           <p>Amount   Frequency  <button type="button" id="convert">Convert</button></p>
-          <input type="text" id="amount"> 
+          <input type="number" id="amount"> 
           <select id="frequencyList"> 
               <option id="f1" value="Hourly">Hourly</option>
               <option id="f2" value="Daily">Daily</option>
@@ -34,11 +34,12 @@
             </select>
         </div> 
         <div class = "Rates">
-          <p>Hourly Rate    <input type="text" disabled = "disabled" id="HR" align="right"> 
-          <p>Daily Rate     <input type="text" disabled = "disabled" id="DR" align="right"> </p>
-          <p>Weekly Rate    <input type="text" disabled = "disabled" id="WR" align="right"> </p>
-          <p>Monthly Rate   <input type="text" disabled = "disabled" id="MR" align="right"> </p>
-          <p>Annual rate    <input type="text" disabled = "disabled" id="AR" align="right"> </p>
+          <p>Hourly Rate    <input type="number" disabled = "disabled" id="HR" align="right" value=0.00> 
+          <p>Daily Rate     <input type="number" disabled = "disabled" id="DR" align="right" value=0.00> </p>
+          <p>Weekly Rate    <input type="number" disabled = "disabled" id="WR" align="right" value=0.00> </p>
+          <p>Monthly Rate   <input type="number" disabled = "disabled" id="MR" align="right" value=0.00> </p>
+          <p>Annual rate    <input type="number" disabled = "disabled" id="AR" align="right" value=0.00> </p>
+          <p id="overtime">Overtime rate    <input type="number" disabled = "disabled" id="OR" align="right" value=0.00> </p>
         </div>
         <div class = "buttons">
                 <button type="button" id="prorateButton"> prorate </button> <button type="button" id="clearButton"> Clear</button> <button type="button"> exit</button>
