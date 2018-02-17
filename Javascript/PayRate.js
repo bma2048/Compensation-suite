@@ -7,44 +7,60 @@ const ANNUAL = "Annual";
 $(document).ready(function(){
     $("#overtime").hide();
     $("#convert").click(function (){
-        var amount = document.getElementById("amount").value;
+        convertAction();
+    });
 
-        if($("#frequencyList").val() == HOURLY){
-            hourlyPay(amount);
-        } 
-        if($("#frequencyList").val() == DAILY){
-            dailyPay(amount);
-        }
-        if($("#frequencyList").val() == WEEKLY){
-            weeklyPay(amount);
-        }
-        if($("#frequencyList").val() == MONTHLY){
-            monthlyPay(amount);
-        }
-        if($("#frequencyList").val() == ANNUAL){
-            annualPay(amount);
-        }
+    $("#amount").click(function(){
+        $(this).select();
+    });
 
-        if($("#exemptYes").is(":checked")){
-            $("#overtime").hide();
+    $("#amount").keypress(function (e) {
+        var key = e.which;
+        if(key == 13){
+           $("#convert").click();
         }
+    });
+    
+    $("#frequencyList").change(function(){
+        $("#convert").click();
+    });
 
-        if($("#exemptNo").is(":checked")){
-            $("#overtime").show();
-        }
-        
-        formatNums();
+    $("#exemptYes").click(function(){
+        $("#overtime").hide();
+    });
 
+    $("#exemptNo").click(function(){
+        $("#overtime").show();
     });
 
     $("#clearButton").click(function(){
-        $("#HR").val("");
-        $("#DR").val("");
-        $("#WR").val("");
-        $("#MR").val("");
-        $("#AR").val("");
+        clearAll();
+        formatNums();
     });
 });
+
+function convertAction(){
+    var amount = document.getElementById("amount").value;
+    var frequency = document.getElementById("frequencyList").value;
+
+    if(frequency == HOURLY){
+        hourlyPay(amount);
+    } 
+    if(frequency == DAILY){
+        dailyPay(amount);
+    }
+    if(frequency == WEEKLY){
+        weeklyPay(amount);
+    }
+    if(frequency == MONTHLY){
+        monthlyPay(amount);
+    }
+    if(frequency == ANNUAL){
+        annualPay(amount);
+    }
+    
+    formatNums();
+}
 
 function hourlyPay(amount){
     document.getElementById("HR").value = amount;
@@ -92,10 +108,22 @@ function annualPay(amount){
 }
 
 function formatNums(){
+    document.getElementById("amount").value = (Math.round(document.getElementById("amount").value * 100)/100).toFixed(2);
     document.getElementById("HR").value = (Math.round(document.getElementById("HR").value * 100)/100).toFixed(2);
     document.getElementById("DR").value = (Math.round(document.getElementById("DR").value * 100)/100).toFixed(2);
     document.getElementById("WR").value = (Math.round(document.getElementById("WR").value * 100)/100).toFixed(2);
     document.getElementById("MR").value = (Math.round(document.getElementById("MR").value * 100)/100).toFixed(2);
     document.getElementById("AR").value = (Math.round(document.getElementById("AR").value * 100)/100).toFixed(2);
     document.getElementById("OR").value = (Math.round(document.getElementById("OR").value * 100)/100).toFixed(2);
+}
+
+function clearAll(){
+    document.getElementById("amount").value = 0;
+    document.getElementById("HR").value = 0;
+    document.getElementById("DR").value = 0;
+    document.getElementById("WR").value = 0;
+    document.getElementById("MR").value = 0;
+    document.getElementById("AR").value = 0;
+    document.getElementById("OR").value = 0;
+    document.getElementById("amount").select();
 }
